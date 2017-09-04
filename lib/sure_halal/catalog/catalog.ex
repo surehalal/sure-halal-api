@@ -198,99 +198,99 @@ defmodule SureHalal.Catalog do
     Product.changeset(product, %{})
   end
 
-  alias SureHalal.Catalog.Type
+  alias SureHalal.Catalog.FoodType
 
   @doc """
-  Returns the list of types.
+  Returns the list of food_types.
 
   ## Examples
 
-      iex> list_types()
-      [%Type{}, ...]
+      iex> list_food_types()
+      [%FoodType{}, ...]
 
   """
-  def list_types do
-    Repo.all(Type)
+  def list_food_types do
+    Repo.all(FoodType)
   end
 
   @doc """
-  Gets a single type.
+  Gets a single food_type.
 
-  Raises `Ecto.NoResultsError` if the Type does not exist.
+  Raises `Ecto.NoResultsError` if the Food type does not exist.
 
   ## Examples
 
-      iex> get_type!(123)
-      %Type{}
+      iex> get_food_type!(123)
+      %FoodType{}
 
-      iex> get_type!(456)
+      iex> get_food_type!(456)
       ** (Ecto.NoResultsError)
 
   """
-  def get_type!(id), do: Repo.get!(Type, id)
+  def get_food_type!(id), do: Repo.get!(FoodType, id)
 
   @doc """
-  Creates a type.
+  Creates a food_type.
 
   ## Examples
 
-      iex> create_type(%{field: value})
-      {:ok, %Type{}}
+      iex> create_food_type(%{field: value})
+      {:ok, %FoodType{}}
 
-      iex> create_type(%{field: bad_value})
+      iex> create_food_type(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_type(attrs \\ %{}) do
-    %Type{}
-    |> Type.changeset(attrs)
+  def create_food_type(attrs \\ %{}) do
+    %FoodType{}
+    |> FoodType.changeset(attrs)
     |> Repo.insert()
   end
 
   @doc """
-  Updates a type.
+  Updates a food_type.
 
   ## Examples
 
-      iex> update_type(type, %{field: new_value})
-      {:ok, %Type{}}
+      iex> update_food_type(food_type, %{field: new_value})
+      {:ok, %FoodType{}}
 
-      iex> update_type(type, %{field: bad_value})
+      iex> update_food_type(food_type, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def update_type(%Type{} = type, attrs) do
-    type
-    |> Type.changeset(attrs)
+  def update_food_type(%FoodType{} = food_type, attrs) do
+    food_type
+    |> FoodType.changeset(attrs)
     |> Repo.update()
   end
 
   @doc """
-  Deletes a Type.
+  Deletes a FoodType.
 
   ## Examples
 
-      iex> delete_type(type)
-      {:ok, %Type{}}
+      iex> delete_food_type(food_type)
+      {:ok, %FoodType{}}
 
-      iex> delete_type(type)
+      iex> delete_food_type(food_type)
       {:error, %Ecto.Changeset{}}
 
   """
-  def delete_type(%Type{} = type) do
-    Repo.delete(type)
+  def delete_food_type(%FoodType{} = food_type) do
+    Repo.delete(food_type)
   end
 
   @doc """
-  Returns an `%Ecto.Changeset{}` for tracking type changes.
+  Returns an `%Ecto.Changeset{}` for tracking food_type changes.
 
   ## Examples
 
-      iex> change_type(type)
-      %Ecto.Changeset{source: %Type{}}
+      iex> change_food_type(food_type)
+      %Ecto.Changeset{source: %FoodType{}}
 
   """
-  def change_type(%Type{} = type) do
-    Type.changeset(type, %{})
+  def change_food_type(%FoodType{} = food_type) do
+    FoodType.changeset(food_type, %{})
   end
 end

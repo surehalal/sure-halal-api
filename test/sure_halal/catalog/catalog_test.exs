@@ -123,63 +123,63 @@ defmodule SureHalal.CatalogTest do
     end
   end
 
-  describe "types" do
-    alias SureHalal.Catalog.Type
+  describe "food_types" do
+    alias SureHalal.Catalog.FoodType
 
     @valid_attrs %{name: "some name"}
     @update_attrs %{name: "some updated name"}
     @invalid_attrs %{name: nil}
 
-    def type_fixture(attrs \\ %{}) do
-      {:ok, type} =
+    def food_type_fixture(attrs \\ %{}) do
+      {:ok, food_type} =
         attrs
         |> Enum.into(@valid_attrs)
-        |> Catalog.create_type()
+        |> Catalog.create_food_type()
 
-      type
+      food_type
     end
 
-    test "list_types/0 returns all types" do
-      type = type_fixture()
-      assert Catalog.list_types() == [type]
+    test "list_food_types/0 returns all food_types" do
+      food_type = food_type_fixture()
+      assert Catalog.list_food_types() == [food_type]
     end
 
-    test "get_type!/1 returns the type with given id" do
-      type = type_fixture()
-      assert Catalog.get_type!(type.id) == type
+    test "get_food_type!/1 returns the food_type with given id" do
+      food_type = food_type_fixture()
+      assert Catalog.get_food_type!(food_type.id) == food_type
     end
 
-    test "create_type/1 with valid data creates a type" do
-      assert {:ok, %Type{} = type} = Catalog.create_type(@valid_attrs)
-      assert type.name == "some name"
+    test "create_food_type/1 with valid data creates a food_type" do
+      assert {:ok, %FoodType{} = food_type} = Catalog.create_food_type(@valid_attrs)
+      assert food_type.name == "some name"
     end
 
-    test "create_type/1 with invalid data returns error changeset" do
-      assert {:error, %Ecto.Changeset{}} = Catalog.create_type(@invalid_attrs)
+    test "create_food_type/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Catalog.create_food_type(@invalid_attrs)
     end
 
-    test "update_type/2 with valid data updates the type" do
-      type = type_fixture()
-      assert {:ok, type} = Catalog.update_type(type, @update_attrs)
-      assert %Type{} = type
-      assert type.name == "some updated name"
+    test "update_food_type/2 with valid data updates the food_type" do
+      food_type = food_type_fixture()
+      assert {:ok, food_type} = Catalog.update_food_type(food_type, @update_attrs)
+      assert %FoodType{} = food_type
+      assert food_type.name == "some updated name"
     end
 
-    test "update_type/2 with invalid data returns error changeset" do
-      type = type_fixture()
-      assert {:error, %Ecto.Changeset{}} = Catalog.update_type(type, @invalid_attrs)
-      assert type == Catalog.get_type!(type.id)
+    test "update_food_type/2 with invalid data returns error changeset" do
+      food_type = food_type_fixture()
+      assert {:error, %Ecto.Changeset{}} = Catalog.update_food_type(food_type, @invalid_attrs)
+      assert food_type == Catalog.get_food_type!(food_type.id)
     end
 
-    test "delete_type/1 deletes the type" do
-      type = type_fixture()
-      assert {:ok, %Type{}} = Catalog.delete_type(type)
-      assert_raise Ecto.NoResultsError, fn -> Catalog.get_type!(type.id) end
+    test "delete_food_type/1 deletes the food_type" do
+      food_type = food_type_fixture()
+      assert {:ok, %FoodType{}} = Catalog.delete_food_type(food_type)
+      assert_raise Ecto.NoResultsError, fn -> Catalog.get_food_type!(food_type.id) end
     end
 
-    test "change_type/1 returns a type changeset" do
-      type = type_fixture()
-      assert %Ecto.Changeset{} = Catalog.change_type(type)
+    test "change_food_type/1 returns a food_type changeset" do
+      food_type = food_type_fixture()
+      assert %Ecto.Changeset{} = Catalog.change_food_type(food_type)
     end
   end
 end

@@ -1,8 +1,8 @@
-defmodule SureHalal.Repo.Migrations.CreateTypes do
+defmodule SureHalal.Repo.Migrations.CreateFoodTypes do
   use Ecto.Migration
 
   def change do
-    create table(:types) do
+    create table(:food_types) do
       add :name, :string
 
       timestamps()
