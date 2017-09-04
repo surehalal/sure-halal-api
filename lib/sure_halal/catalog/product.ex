@@ -6,6 +6,8 @@ defmodule SureHalal.Catalog.Product do
 
   schema "products" do
     field :name, :string
+    field :halal, :boolean
+    field :description, :string
 
     timestamps()
   end

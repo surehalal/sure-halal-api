@@ -6,6 +6,9 @@ defmodule SureHalal.Catalog.Merchant do
 
   schema "merchants" do
     field :name, :string
+    field :halal, :boolean
+    field :description, :string
+    # TODO location
 
     timestamps()
   end

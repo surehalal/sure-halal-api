@@ -6,6 +6,7 @@ defmodule SureHalal.Catalog.FoodType do
 
   schema "food_types" do
     field :name, :string
+    field :description, :string
 
     timestamps()
   end

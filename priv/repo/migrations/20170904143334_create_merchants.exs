@@ -4,6 +4,8 @@ defmodule SureHalal.Repo.Migrations.CreateMerchants do
   def change do
     create table(:merchants) do
       add :name, :string
+      add :halal, :boolean
+      add :description, :string
 
       timestamps()
     end
