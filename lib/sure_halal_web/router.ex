@@ -7,5 +7,9 @@ defmodule SureHalalWeb.Router do
 
   scope "/api", SureHalalWeb do
     pipe_through :api
+
+    resources "/merchant", MerchantController, except: [:new, :edit]
+    resources "/product", ProductController, except: [:new, :edit]
+    resources "/food-type", FoodTypeController, except: [:new, :edit]
   end
 end
